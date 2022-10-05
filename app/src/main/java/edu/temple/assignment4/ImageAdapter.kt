@@ -20,4 +20,21 @@ class ImageAdapter(
         return ViewHolder(view)
     }
 
+    override fun onBindViewHolder(holder: ViewHolder, position: Int)
+    {
+
+    }
+
+    override fun getItemCount(): Int
+    {
+        return imageList.size
+    }
+
+    class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
+        val imageView: ImageView = itemView.findViewById(R.id.img_place)
+    }
+
+    interface ImageOperations {
+        fun onImageClicked(name: String, img: Int)
+    }
 }
