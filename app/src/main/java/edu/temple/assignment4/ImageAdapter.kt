@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 
+//custom adapter
 class ImageAdapter(
     private val context: Context,
                    private val imageList: List<Int>,
@@ -22,7 +23,9 @@ class ImageAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
-
+        holder.imageView.setImageResource(imageList[position])
+        holder.imageView.setOnClickListener(View.OnClickListener { listener.onImageClicked(placeName[position], imageList[position])
+        })
     }
 
     override fun getItemCount(): Int

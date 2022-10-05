@@ -28,6 +28,7 @@ class ImageActivity : AppCompatActivity(), ImageAdapter.ImageOperations
         val imageList = listOf<Int>(
             R.drawable.chicago, R.drawable.nyc, R.drawable.paris, R.drawable.dubai,
             R.drawable.korea, R.drawable.istanbul, R.drawable.Toronto, R.drawable.egypt, R.drawable.california, R.drawable.Antalya)
+
         val placeName = listOf<String>("Chicago","New York","Paris", "Dubai", "Korea", "Istanbul","Toronto","Egypt","California","Antalya")
 
         //custom adapter called image adapter

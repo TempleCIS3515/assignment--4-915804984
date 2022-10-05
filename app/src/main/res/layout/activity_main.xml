@@ -20,7 +20,6 @@
         android:layout_height="300dp"
         android:layout_below="@id/recycleView"
         android:layout_marginBottom="24dp"
-        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -30,12 +29,11 @@
         android:id="@+id/_placeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
         android:layout_below="@id/_placeName"
         app:layout_constraintBottom_toTopOf="@+id/_placeImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/recycleView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
