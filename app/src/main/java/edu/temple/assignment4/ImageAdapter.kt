@@ -7,13 +7,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 
-//custom adapter
-class ImageAdapter(
-    private val context: Context,
-                   private val imageList: List<Int>,
-                   private val placeName: List<String>,
-                   private val listener: ImageOperations
-                   ): RecyclerView.Adapter<ImageAdapter.ViewHolder>() {
+//custom adapter inherits from RecyclerView.Adapter
+class ImageAdapter(private val context: Context, private val imageList: List<Int>, private val placeName: List<String>, private val listener: ImageOperations): RecyclerView.Adapter<ImageAdapter.ViewHolder>()
+{
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =

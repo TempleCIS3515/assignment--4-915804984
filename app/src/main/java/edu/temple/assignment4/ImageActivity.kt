@@ -17,28 +17,32 @@ class ImageActivity : AppCompatActivity(), ImageAdapter.ImageOperations
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recycleView)
-        placeName = findViewById(R.id._placeName)
-        placeImage = findViewById(R.id._placeImage)
+            //adding variable names to place name and image
+            //identifying recycler view
+            val recyclerView = findViewById<RecyclerView>(R.id.recycleView)
 
-        //grid layout manager
-        recyclerView.layoutManager = GridLayoutManager(this, 4)
+                //using grid layout manager and adding 5 images per row
+                recyclerView.layoutManager = GridLayoutManager(this, 5)
 
-        //images and names
-        val imageList = listOf<Int>(
-            R.drawable.chicago, R.drawable.nyc, R.drawable.paris, R.drawable.dubai,
-            R.drawable.korea, R.drawable.istanbul, R.drawable.Toronto, R.drawable.egypt, R.drawable.california, R.drawable.Antalya)
+                placeName = findViewById(R.id._placeName)
+                placeImage = findViewById(R.id._placeImage)
 
-        val placeName = listOf<String>("Chicago","New York","Paris", "Dubai", "Korea", "Istanbul","Toronto","Egypt","California","Antalya")
+                    //images list using drawable and listof
+                    val imageList = listOf<Int>(
+                        R.drawable.chicago, R.drawable.nyc, R.drawable.paris, R.drawable.dubai,
+                        R.drawable.korea, R.drawable.istanbul, R.drawable.toronto, R.drawable.egypt, R.drawable.california, R.drawable.antalya)
 
-        //custom adapter called image adapter
-        recyclerView.adapter = ImageAdapter(this, imageList, placeName, this)
+                    //creating list of string names that represent the images
+                    val placeName = listOf<String>("Chicago","New York","Paris", "Dubai", "Korea", "Istanbul","Toronto","Egypt","California","Antalya")
+
+                //custom adapter called image adapter
+                recyclerView.adapter = ImageAdapter(this, imageList, placeName, this)
     }
-
-    override fun onImageClicked(name: String, img: Int)
+    //function for text to show name of image
+    override fun onImageClicked(name: String, image: Int)
     {
         //image is clicked in recycler view, selected image and text
         placeName.text = name;
-        placeImage.setImageResource(img)
+        placeImage.setImageResource(image)
     }
 }
