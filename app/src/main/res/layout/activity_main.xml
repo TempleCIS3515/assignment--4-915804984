@@ -9,16 +9,17 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleView"
-        android:layout_width="386dp"
-        android:layout_height="136dp"
+        android:layout_width="384dp"
+        android:layout_height="222dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="36dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/_placeImage"
-        android:layout_width="245dp"
-        android:layout_height="303dp"
+        android:layout_width="292dp"
+        android:layout_height="247dp"
         android:layout_below="@id/recycleView"
         android:layout_marginBottom="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,12 +31,14 @@
         android:id="@+id/_placeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Click on a location!"
         android:layout_below="@id/_placeName"
         android:layout_centerHorizontal="true"
+        android:text="Click on a location!"
         app:layout_constraintBottom_toTopOf="@+id/_placeImage"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recycleView" />
+        app:layout_constraintTop_toBottomOf="@+id/recycleView"
+        app:layout_constraintVertical_bias="0.214" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

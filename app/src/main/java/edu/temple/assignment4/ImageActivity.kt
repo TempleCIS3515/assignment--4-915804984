@@ -22,7 +22,7 @@ class ImageActivity : AppCompatActivity(), ImageAdapter.ImageOperations
             val recyclerView = findViewById<RecyclerView>(R.id.recycleView)
 
                 //using grid layout manager and adding 5 images per row
-                recyclerView.layoutManager = GridLayoutManager(this, 5)
+                recyclerView.layoutManager = GridLayoutManager(this, 4)
 
                 placeName = findViewById(R.id._placeName)
                 placeImage = findViewById(R.id._placeImage)

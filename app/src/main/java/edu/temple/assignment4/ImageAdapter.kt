@@ -11,17 +11,18 @@ import androidx.recyclerview.widget.RecyclerView
 class ImageAdapter(private val context: Context, private val imageList: List<Int>, private val placeName: List<String>, private val listener: ImageOperations): RecyclerView.Adapter<ImageAdapter.ViewHolder>()
 {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
+    {
+        //declaring view
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.place_list_item, parent, false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int)
+    override fun onBindViewHolder(holder: ViewHolder, i: Int)
     {
-        holder.imageView.setImageResource(imageList[position])
-        holder.imageView.setOnClickListener(View.OnClickListener { listener.onImageClicked(placeName[position], imageList[position])
-        })
+        holder.imageView.setImageResource(imageList[i])
+        holder.imageView.setOnClickListener(View.OnClickListener{listener.onImageClicked(placeName[i], imageList[i])})
     }
 
     override fun getItemCount(): Int
@@ -29,11 +30,12 @@ class ImageAdapter(private val context: Context, private val imageList: List<Int
         return imageList.size
     }
 
-    class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
+    class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView)
+    {
         val imageView: ImageView = itemView.findViewById(R.id.img_place)
     }
 
     interface ImageOperations {
-        fun onImageClicked(name: String, img: Int)
+        fun onImageClicked(name: String, image: Int)
     }
 }
