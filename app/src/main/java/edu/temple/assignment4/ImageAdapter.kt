@@ -19,23 +19,24 @@ class ImageAdapter(private val context: Context, private val imageList: List<Int
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, i: Int)
-    {
-        holder.imageView.setImageResource(imageList[i])
-        holder.imageView.setOnClickListener(View.OnClickListener{listener.onImageClicked(placeName[i], imageList[i])})
-    }
+        override fun onBindViewHolder(holder: ViewHolder, i: Int)
+        {
+            holder.imageView.setImageResource(imageList[i])
+            holder.imageView.setOnClickListener(View.OnClickListener{listener.onImageClicked(placeName[i], imageList[i])})
+        }
 
-    override fun getItemCount(): Int
-    {
-        return imageList.size
-    }
+            override fun getItemCount(): Int
+            {
+                return imageList.size
+            }
 
-    class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView)
-    {
-        val imageView: ImageView = itemView.findViewById(R.id.img_place)
-    }
+                class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView)
+                {
+                    val imageView: ImageView = itemView.findViewById(R.id.img_place)
+                }
 
-    interface ImageOperations {
-        fun onImageClicked(name: String, image: Int)
-    }
+                    interface ImageOperations
+                    {
+                        fun onImageClicked(name: String, image: Int)
+                    }
 }
